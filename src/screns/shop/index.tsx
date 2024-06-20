@@ -3,7 +3,7 @@ import { View, Text, Image, TextInput } from 'react-native';
 import { styles } from './styles';
 
 
-export default function Conta() {
+export default function Shop() {
     return (
         <View style={styles.conta}>
 

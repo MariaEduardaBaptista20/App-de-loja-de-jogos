@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Text, Image, View, Pressable, ScrollView } from "react-native";
+import { Text, Image, View, Pressable, ScrollView, TouchableOpacity } from "react-native";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { styles } from "./styles";
 import data from "../../db/data";
 
@@ -10,7 +12,7 @@ interface produtoDb{
     valor: string,
     plataforma: string
 }
-export default function Inicio() {
+export default function Inicio({ navigation }) {
 const [parametroBusca, setParametroBusca] = useState<produtoDb[]>([]);
 const [produtos, setProdutos] = useState<JSX.Element[]>([]);
 
@@ -31,20 +33,24 @@ function mostrarProdutos(plataforma: string) {
 }
 
 
-
+const navigateToProduto = (produto: object) => {
+    navigation.navigate('Produto', { produto });
+  };
 
 
 useEffect(() => {
     const produtosJSX = parametroBusca.map((objeto, index) => {
+        console.log(objeto.id)
         return (
-            <View key={index} style={styles.produto}>
+            <TouchableOpacity key={index} style={styles.produto} onPress={() => navigateToProduto(objeto)}>
                 
                 <Image source={{ uri: objeto.img }} style={styles.img}/>
                 <View style={styles.containerTextoProduto}>
                 <Text style={styles.produtoTitulo}>{objeto.titulo}</Text>
                 <Text style={styles.produtoValor}>{objeto.valor}</Text>
                 </View>
-            </View>
+
+            </TouchableOpacity>
         );
     });
     setProdutos(produtosJSX);
