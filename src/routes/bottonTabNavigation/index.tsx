@@ -4,6 +4,7 @@ import  Inicio  from '../../screns/inicio/index';
 import Shop from '../../screns/shop';
 import Conta from '../../screns/conta/index';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { ProdutoRouter } from '../../routes/produtosRoutes/index'
 
 
 
@@ -29,7 +30,7 @@ export function BottomTabRoutes() {
 			<Tab.Screen
 		
 				name="Inicio"
-				component={Inicio}
+				component={ProdutoRouter}
 			/>
 			<Tab.Screen
 		
