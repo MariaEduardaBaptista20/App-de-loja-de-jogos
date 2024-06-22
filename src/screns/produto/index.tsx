@@ -1,8 +1,14 @@
 import React, { useEffect } from 'react';
-import { View, Text, Image, TextInput } from 'react-native';
+import { View, Text, Image, TextInput, Button } from 'react-native';
 import { styles } from './styles';
 import { Routes } from '../../routes/routes';
 import { useRoute } from '@react-navigation/native';
+
+import { AntDesign } from '@expo/vector-icons';
+
+
+
+{/* <AntDesign name="heart" size={24} color="black" /> */}
 
 
 type RouterParms = {
@@ -36,6 +42,12 @@ export default function Produto() {
             <Text style={ styles.plataforma}>Plataforma: {produto.plataforma}</Text>
             <Text style={ styles.titulo}>{produto.titulo}</Text>
             <Text style={ styles.preco}>{produto.valor}</Text>
+            <View style={styles.botoes}>
+          
+            <Button title='Comprar'  ></Button>
+            <AntDesign name="hearto" size={24} color="#FFF" />
+            </View>
+            
             
 
         </View>

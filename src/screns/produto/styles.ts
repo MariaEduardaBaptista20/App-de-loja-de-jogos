@@ -11,8 +11,8 @@ export const styles = StyleSheet.create({
         backgroundColor: '#090921',
     },
     img:{
-        width: 250, 
-        height: 320
+        width: 230, 
+        height: 300
 
     },
     titulo:{
@@ -32,8 +32,17 @@ export const styles = StyleSheet.create({
     preco:{
         fontSize: 30,
         textAlign: 'center',
-        color: 'red',
-        paddingVertical: 5
+        color: '#FFF',
+       
+
+    },
+    botoes:{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        gap: 5,
+        marginTop: 10
+
     }
 
 })

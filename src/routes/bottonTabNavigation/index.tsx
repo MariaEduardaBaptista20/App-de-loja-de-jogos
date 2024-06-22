@@ -1,7 +1,7 @@
 import { Image } from 'react-native';
 import  Carrinho  from '../../screns/carrinho/index';
 import  Inicio  from '../../screns/inicio/index';
-import Shop from '../../screns/shop';
+import Favoritos from '../../screns/favoritos';
 import Conta from '../../screns/conta/index';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ProdutoRouter } from '../../routes/produtosRoutes/index'
@@ -13,7 +13,7 @@ const Tab = createBottomTabNavigator<RootTabParamList>();
 export type RootTabParamList = {
 	Inicio: {};
 	Carrinho: {};
-  Shop: {};
+  Favoritos: {};
   Conta: {};
 }
 
@@ -34,8 +34,8 @@ export function BottomTabRoutes() {
 			/>
 			<Tab.Screen
 		
-				name="Shop"
-				component={Shop}
+				name="Favoritos"
+				component={Favoritos}
 			/>
 
 <Tab.Screen
