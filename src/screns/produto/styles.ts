@@ -19,7 +19,8 @@ export const styles = StyleSheet.create({
         fontSize: 40,
         textAlign: 'center',
         color: '#ededed',
-        paddingVertical: 5
+        maxWidth: "80%"
+        
         
     },
     plataforma:{
@@ -39,9 +40,11 @@ export const styles = StyleSheet.create({
     botoes:{
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        gap: 5,
-        marginTop: 10
+        alignItems:'center',
+        justifyContent: 'center',
+        gap: 10,
+        marginTop: 10,
+        width: '80%'
 
     }
 

@@ -16,42 +16,25 @@ interface produtoDb{
 }
 export default function Inicio({ navigation }) {
 const [parametroBusca, setParametroBusca] = useState<produtoDb[]>([]);
-
 const [produtos, setProdutos] = useState<JSX.Element[]>([]);
-const [pesquisa, setPesquisa] = useState<string>("")
-const [plataformaPesquisa, setPlataformaPesquisa] = useState<string>("")
+const [pesquisa, setPesquisa] = useState<string>("");
+const [plataformaPesquisa, setPlataformaPesquisa] = useState<string>("");
+const [forceUpdate, setForceUpdate] = useState(false);
 
 
 
 
 function mostrarProdutos(plataforma: string) {
-    console.log(plataforma);
-    setPlataformaPesquisa(plataforma)
-    if (parametroBusca.length == 0 && pesquisa == "" || plataforma == "" && pesquisa == "") {
-        setParametroBusca(data)
-        console.log(parametroBusca)
-    } else if (parametroBusca.length == 0  && pesquisa !== "" || plataforma == "" && pesquisa !== "") {
-        const dataPesquisaFiltared = data.filter(produto => produto.titulo.includes(pesquisa));
-        console.log(parametroBusca)
-            setParametroBusca(dataPesquisaFiltared)
     
-    
-    } else if(plataforma !== "") {
+    setPlataformaPesquisa(plataforma);
+    if (parametroBusca.length == 0 || plataforma == "") {
+        setParametroBusca(data);
+    } else{
         const dataFiltared = data.filter(produto => produto.plataforma == plataforma);
-        const dataPesquisaFiltared = dataFiltared.filter(produto => produto.titulo.includes(pesquisa));
-
-
-        if(pesquisa == ""){
             
-        setParametroBusca(dataFiltared)
-        console.log(parametroBusca)
-        } else{
-           
-            setParametroBusca(dataPesquisaFiltared)
-            console.log(parametroBusca)
-        }
-    }
-    
+        setParametroBusca(dataFiltared);
+      }
+    setForceUpdate(prev => !prev);
 }
 
 
@@ -61,7 +44,8 @@ const navigateToProduto = (produto: object) => {
 
 
 useEffect(() => {
-    if(pesquisa !== ""){
+    
+    if(pesquisa == ""){
     const produtosJSX = parametroBusca.map((objeto, index) => {
     
         return (
@@ -78,35 +62,33 @@ useEffect(() => {
     });
     setProdutos(produtosJSX);
 }else{
-    const dataPesquisaFiltared = parametroBusca.filter(produto => produto.titulo.includes(pesquisa));
-    const produtosJSX = dataPesquisaFiltared.map((objeto, index) => {
+    const dataPesquisaFiltared = parametroBusca.filter(produto => produto.titulo.toLowerCase().includes(pesquisa.toLowerCase()));
+    const produtosJSX2 = dataPesquisaFiltared.map((objeto, index) => {
     
         return (
             <TouchableOpacity key={index} style={styles.produto} onPress={() => navigateToProduto(objeto)}>
                 
                 <Image source={{ uri: objeto.img }} style={styles.img}/>
                 <View style={styles.containerTextoProduto}>
-                <Text style={styles.produtoTitulo}>{objeto.titulo}</Text>
+                <Text numberOfLines={3} style={styles.produtoTitulo}>{objeto.titulo}</Text>
                 <Text style={styles.produtoValor}>{objeto.valor}</Text>
                 </View>
 
             </TouchableOpacity>
         );
     });
-    setProdutos(produtosJSX);
+    setProdutos(produtosJSX2);
 }
-}, [parametroBusca]);
+}, [forceUpdate]);
 
 useEffect(() => {
-    mostrarProdutos("")
-    console.log(parametroBusca)
+    mostrarProdutos("");
 },[])
 
 
 
 const handleInputChange = (e) => {
-    console.log(e)
-    setPesquisa(e.target.value)
+    setPesquisa(e.target.value);
   }
 
 

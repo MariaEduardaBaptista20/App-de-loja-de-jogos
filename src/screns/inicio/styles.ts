@@ -136,7 +136,7 @@ export const styles = StyleSheet.create({
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        height: 51.5,
+        height: 53,
         
         
     },
@@ -144,7 +144,8 @@ export const styles = StyleSheet.create({
         fontSize: 10,
         flexWrap: 'nowrap',
         textAlign: 'center',
-        color: '#ededed'
+        color: '#ededed',
+        overflow: 'hidden',
     },
     produtoValor:{
         fontSize: 10,

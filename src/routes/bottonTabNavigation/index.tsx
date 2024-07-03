@@ -4,7 +4,7 @@ import  Inicio  from '../../screns/inicio/index';
 import Favoritos from '../../screns/favoritos';
 import Conta from '../../screns/conta/index';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { ProdutoRouter } from '../../routes/produtosRoutes/index'
+import { ProdutoRouter } from '../../routes/produtosRoutes/index';
 
 
 

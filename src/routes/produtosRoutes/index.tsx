@@ -14,7 +14,7 @@ export function ProdutoRouter() {
    
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Inicio" component={Inicio} options={{ headerShown: false }}/>
-        <Stack.Screen name="Produto" component={Produto} />
+        <Stack.Screen name="Produto" component={Produto} options={{ headerStyle:{backgroundColor: 'black'}, headerTintColor: "white" }}/>
         
       </Stack.Navigator>
    
