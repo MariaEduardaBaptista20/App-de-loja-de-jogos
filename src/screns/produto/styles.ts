@@ -11,15 +11,16 @@ export const styles = StyleSheet.create({
         backgroundColor: '#090921',
     },
     img:{
-        width: 250, 
-        height: 320
+        width: 230, 
+        height: 300
 
     },
     titulo:{
         fontSize: 40,
         textAlign: 'center',
         color: '#ededed',
-        paddingVertical: 5
+        maxWidth: "80%"
+        
         
     },
     plataforma:{
@@ -32,8 +33,19 @@ export const styles = StyleSheet.create({
     preco:{
         fontSize: 30,
         textAlign: 'center',
-        color: 'red',
-        paddingVertical: 5
+        color: '#FFF',
+       
+
+    },
+    botoes:{
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems:'center',
+        justifyContent: 'center',
+        gap: 10,
+        marginTop: 10,
+        width: '80%'
+
     }
 
 })

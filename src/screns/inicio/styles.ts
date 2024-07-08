@@ -8,16 +8,52 @@ export const styles = StyleSheet.create({
         display: 'flex',
         paddingTop: 30,
         alignItems: 'center',
+        backgroundColor: 'black'
+    },
+    body:{
+        display: 'flex',
+        alignItems: 'center',
+        backgroundColor: 'black'
     },
     titulo:{
         display: 'flex',
        fontSize: 30,
       backgroundColor: 'black',
-      width: '100%',
-      textAlign: 'center',
+     
+   
         color: '#FFF'
 
 
+    },
+    divTextInput:{
+        width: '80%',
+      display:'flex',
+      flexDirection: 'row',
+
+       
+       
+       
+        
+
+
+    },
+    textInput:{
+        width: '90%',
+      display:'flex',
+      flexDirection: 'row',
+
+        backgroundColor: '#FFF',
+       
+        borderRadius: 5,
+        
+
+
+    },
+    lupa:{
+        backgroundColor: '#FFF',
+        borderRadius: 10,
+        marginLeft: 2,
+        paddingHorizontal: '5%',
     },
     fraseBanner:{
         fontSize: 15,
@@ -58,7 +94,9 @@ export const styles = StyleSheet.create({
 
     tituloButtonsFiltros:{
         color: '#ededed',
-        marginBottom: 10
+        marginBottom: 10,
+        width: '100%',
+        textAlign: 'center'
     },
 
     buttonFiltro:{
@@ -98,7 +136,7 @@ export const styles = StyleSheet.create({
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        height: 51.5,
+        height: 53,
         
         
     },
@@ -106,7 +144,8 @@ export const styles = StyleSheet.create({
         fontSize: 10,
         flexWrap: 'nowrap',
         textAlign: 'center',
-        color: '#ededed'
+        color: '#ededed',
+        overflow: 'hidden',
     },
     produtoValor:{
         fontSize: 10,
