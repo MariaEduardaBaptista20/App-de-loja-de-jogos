@@ -10,7 +10,6 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#090921',
-        gap: 50
     },
     imgProfile:{
         borderRadius: 100,
@@ -27,15 +26,12 @@ export const styles = StyleSheet.create({
         color: '#ededed',
     },
     sair:{
-        minWidth: "70%",
-        textAlign: 'center',
-        paddingVertical: 20,
+        paddingHorizontal: 20,
         backgroundColor: 'black',
         color: '#ededed',
         fontSize: 18,
         borderColor: '#ededed',
         borderWidth: 2,
-        borderRadius: 10,
-
+        borderRadius: 10
     }
 })

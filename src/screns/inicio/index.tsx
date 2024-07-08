@@ -45,7 +45,7 @@ const navigateToProduto = (produto: object) => {
 
 useEffect(() => {
     
-    if(pesquisa == ""){
+    if(pesquisa === ""){
     const produtosJSX = parametroBusca.map((objeto, index) => {
     
         return (
@@ -78,6 +78,7 @@ useEffect(() => {
         );
     });
     setProdutos(produtosJSX2);
+    console.log(pesquisa)
 }
 }, [forceUpdate]);
 
@@ -87,9 +88,10 @@ useEffect(() => {
 
 
 
-const handleInputChange = (e) => {
-    setPesquisa(e.target.value);
-  }
+const handleInputChange = (text) => {
+    setPesquisa(text);
+  };
+
 
 
     return (
@@ -103,7 +105,7 @@ const handleInputChange = (e) => {
             <Text style={styles.fraseBanner}>Prepare-se para a aventura e desafie seus limites neste emocionante mundo de jogos!</Text>
             <View style={styles.produtoSessao}>
                 <View style={styles.divTextInput}>
-            <TextInput value={pesquisa} inputMode="search" placeholder="Pesquisar" onChange={handleInputChange} placeholderTextColor={'#bcbcbc'} style={styles.textInput} ></TextInput>
+            <TextInput value={pesquisa} inputMode="search" placeholder="Pesquisar"  onChangeText={handleInputChange} placeholderTextColor={'#bcbcbc'} style={styles.textInput} ></TextInput>
             <Feather name="search" size={24} color="black" style={styles.lupa} onPress={() => mostrarProdutos(plataformaPesquisa)}/>
             </View>
             <Text style={styles.tituloButtonsFiltros}>Plataformas</Text>

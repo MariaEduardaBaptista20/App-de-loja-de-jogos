@@ -5,6 +5,7 @@ import Favoritos from '../../screns/favoritos';
 import Conta from '../../screns/conta/index';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ProdutoRouter } from '../../routes/produtosRoutes/index';
+import { LoginNavigation } from '../../routes/loginNavigation/index';
 
 
 
@@ -47,7 +48,7 @@ export function BottomTabRoutes() {
 <Tab.Screen
 			
 				name="Conta"
-				component={Conta}
+				component={LoginNavigation}
 			/>
 		
 		</Tab.Navigator>

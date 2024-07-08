@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     
-    conta:{
+    login:{
       
         height: '100%',
         width: '100%',
@@ -10,25 +10,23 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#090921',
-        gap: 50
+        gap: 10
     },
-    imgProfile:{
+    image:{
         borderRadius: 100,
         height: 200,
         width: 200,
         marginBottom: 10,
         borderWidth: 2,
-        borderColor:'#ededed'
+        borderColor:'#ededed',
 
     },
-    nome:{
+    text:{
         fontSize: 30,
-        paddingBottom: 100,
         color: '#ededed',
     },
-    sair:{
-        minWidth: "70%",
-        textAlign: 'center',
+    cadastrar:{
+        paddingHorizontal: 50,
         paddingVertical: 20,
         backgroundColor: 'black',
         color: '#ededed',
@@ -36,6 +34,15 @@ export const styles = StyleSheet.create({
         borderColor: '#ededed',
         borderWidth: 2,
         borderRadius: 10,
+        margin: 20,
+        
+    },
 
-    }
+   textInput:{
+    backgroundColor:'#ededed',
+    width:'80%',
+    height: 30
+   }
+
+    
 })
